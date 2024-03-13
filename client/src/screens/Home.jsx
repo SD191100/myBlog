@@ -8,7 +8,7 @@ const Home = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/posts')
+                const res = await axios.get('https://api-blog-devsh-shivams-projects-1021053b.vercel.app/api/posts')
                 setPosts(res.data);
             } catch (error) {
                 console.log('Error fetching posts:', error);

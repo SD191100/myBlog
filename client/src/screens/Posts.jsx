@@ -9,7 +9,7 @@ const Posts = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await Axios.get(`http://localhost:3000/api/posts/${slug}`)
+                const res = await Axios.get(`https://api-blog-devsh-shivams-projects-1021053b.vercel.app/api/posts/${slug}`)
                 setPost(res.data.post)
             }
             catch (err) {

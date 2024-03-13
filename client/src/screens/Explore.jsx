@@ -10,7 +10,7 @@ const Explore = () => {
     useEffect(() => {
         const fetchTags = async () => {
             try {
-                const res = await Axios.get('http://localhost:3000/api/tags');
+                const res = await Axios.get('https://api-blog-devsh-shivams-projects-1021053b.vercel.app/api/tags');
                 setTags(res.data);
                 // console.log(res.data);
             } catch (error) {

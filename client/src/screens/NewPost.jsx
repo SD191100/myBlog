@@ -17,7 +17,7 @@ const NewPost = () => {
         const data = { title, content, tags };
         const newPost = async() => {
             try {
-                await Axios.post('http://localhost:3000/api/posts', data);
+                await Axios.post('https://api-blog-devsh-shivams-projects-1021053b.vercel.app/api/posts', data);
                 setTitle(" ");
                 setContent(" ");
                 setTags([]);

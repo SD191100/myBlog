@@ -10,7 +10,7 @@ const TagList = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await Axios.get(`http://localhost:3000/api/tags/${tagTitle}`);
+                const res = await Axios.get(`https://api-blog-devsh-shivams-projects-1021053b.vercel.app/api/tags/${tagTitle}`);
                 setPosts(res.data);
             } catch (error) {
                 console.log(error.message);
