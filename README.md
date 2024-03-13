@@ -31,7 +31,7 @@ npm i
 3. Start the server:
 
 ```bash
-node server.js
+node index.js
 ```
 4. Navigate to the client directory and install dependencies:
 
