@@ -25,8 +25,10 @@ const TagList = () => {
     }, [tagTitle])
     return <div className="container text-white mx-auto max-w-3xl px-4 ">
         <Helmet>
-            <title>d.sh | Explore</title>
-            <meta name="description" content="A collection of guides and tutorials on web development and devops." />
+            <title> {tagTitle} </title>
+            <meta name="title" content="dev.sh" data-react-helmet="true"></meta>
+            <meta name="description" content={`Explore guides and tutorials on ${tagTitle}`} />
+            <link rel="canonical" href={`https://blog.devsh.tech/explore/${tagTitle}`} />
         </Helmet>
         <div className="mt-2 mb-2 sm:mb-5 sm:mt-7">
             <h1 className="text-white font-extrabold mb-2 sm:mb-5 sm:text-6xl text-3xl [text-transform: capitalize]">

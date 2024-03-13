@@ -5,6 +5,7 @@ import Axios from "axios";
 import { useState, useEffect } from "react"
 import Tag from "../components/Tag";
 import Loader from "../components/Loader";
+import { Helmet } from 'react-helmet'
 
 const Explore = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +25,12 @@ const Explore = () => {
     }, [])
 
     return <div className="container text-white mx-auto max-w-3xl px-4 ">
+        <Helmet>
+            <title> Explore </title>
+            <meta name="title" content="dev.sh" data-react-helmet="true"></meta>
+            <meta name="description" content="dev.sh is a blog all about tech and computer engineering, with easy to follow tutorials and cheatsheets" />
+            <link rel="canonical" href="https://blog.devsh.tech/explore" />
+        </Helmet>
         <div className="mt-2 mb-2 sm:mb-5 sm:mt-7">
             <h1 className="text-white font-extrabold mb-2 sm:mb-5 sm:text-6xl text-3xl">
                 Explore

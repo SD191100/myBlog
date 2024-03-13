@@ -3,7 +3,7 @@ import axios from 'axios'
 import Post from '../components/Post';
 import Loader from '../components/Loader';
 
-// import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +23,12 @@ const Home = () => {
     }, []);
 
     return <div className='max-w-3xl mx-auto px-4 relative ' >
+         <Helmet>
+            <title>dev.sh | Home </title>
+            <meta name="title" content="dev.sh | Home" data-react-helmet="true"></meta>
+            <meta name="description" content="dev.sh is a blog all about tech and computer engineering, with easy to follow tutorials and cheatsheets" />
+            <link rel="canonical" href="https://blog.devsh.tech/" />
+        </Helmet>
         <div className="mt-5 mb-5 sm:mb-12 sm:mt-4 ">
             <h1 className="text-white font-bold mb-2 sm:mb-4 sm:text-9xl text-5xl">
                 dev.sh

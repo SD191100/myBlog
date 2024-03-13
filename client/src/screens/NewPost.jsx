@@ -3,6 +3,7 @@
 import Axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Helmet } from 'react-helmet'
 
 const NewPost = () => {
     const navigate = useNavigate();
@@ -36,6 +37,12 @@ const NewPost = () => {
 
     
   return <div className="container max-w-3xl mx-auto px-4  text-white">
+    <Helmet>
+            <title> New </title>
+            <meta name="title" content="dev.sh" data-react-helmet="true"></meta>
+            <meta name="description" content="dev.sh is a blog all about tech and computer engineering, with easy to follow tutorials and cheatsheets" />
+            <link rel="canonical" href="https://blog.devsh.tech/newPost" />
+        </Helmet>
     <h1 className="text-3xl font-bold mb-4">Create a new post</h1>
     <form type='submit' className="flex flex-col">
       <label className="text-lg mb-2 rounded-md" htmlFor="title">Title</label>

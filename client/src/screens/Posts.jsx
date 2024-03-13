@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Content from '../components/Content'
 import Loader from '../components/Loader';
+import { Helmet } from 'react-helmet'
 
 const Posts = () => {
     const { slug } = useParams();
@@ -24,6 +25,12 @@ const Posts = () => {
     }, [slug])
     return (
         <div className='container max-w-3xl mx-auto px-4 text-white' >
+            <Helmet>
+                <title> {post.title} </title>
+                <meta name="title" content="dev.sh" data-react-helmet="true"></meta>
+                <meta name="description" content="dev.sh is a blog all about tech and computer engineering, with easy to follow tutorials and cheatsheets" />
+                <link rel="canonical" href="https://blog.devsh.tech/explore" />
+            </Helmet>
             <div className=' mt-5 mb-5 sm:mb-10 sm:mt-7'>
                 <p className='space-x-2 sm:text-base'>
                     {post.tags.map((tag, index) => {
