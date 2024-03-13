@@ -31,7 +31,10 @@ const Home = () => {
                 A collection of guides and tutorials on web development and devops.
             </p>
         </div>
-        {isLoading ?<div className='absolute top-1/2 left-1/2' ><my-precious color="white"></my-precious></div> : null}
+        <div className='w-full flex justify-center' >
+
+            {isLoading ? <div className='' ><my-precious color="white"></my-precious></div> : null}
+        </div>
         {posts.map((post) => (
             <Post key={post._id} post={post} />
         ))}
