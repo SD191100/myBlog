@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-children-prop */
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { createBrowserHistory } from "history";
 
 import Home from './screens/Home'
@@ -17,7 +17,7 @@ import Posts from './screens/Posts'
 const App = () => {
   return (
     <div className='bg-neutral-900 min-h-screen min-w-screen text-white pb-10 pt-1 sm:pb-32' >
-      <Router history={createBrowserHistory} >
+      <Router  >
         <Nav />
         <Routes>
           <Route path='/' element={<Home />} />
