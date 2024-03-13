@@ -2,15 +2,19 @@ import Axios from 'axios';
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Content from '../components/Content'
+import Loader from '../components/Loader';
 
 const Posts = () => {
     const { slug } = useParams();
+    const [isLoading, setIsLoading] = useState(false);
     const [post, setPost] = useState({ title: '', content: '', tags: [], slug: '', date: '' })
     useEffect(() => {
+        setIsLoading(true);
         const fetchPost = async () => {
             try {
                 const res = await Axios.get(`https://api-blog-devsh-shivams-projects-1021053b.vercel.app/api/posts/${slug}`)
                 setPost(res.data.post)
+                setIsLoading(false)
             }
             catch (err) {
                 console.log(err)
@@ -36,6 +40,7 @@ const Posts = () => {
                     day: 'numeric'
                 })}</p>
             </div>
+            <Loader isLoading={isLoading} />
             <Content content={post.content} />
         </div>
     )

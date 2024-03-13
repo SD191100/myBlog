@@ -4,15 +4,18 @@
 import Axios from "axios";
 import { useState, useEffect } from "react"
 import Tag from "../components/Tag";
+import Loader from "../components/Loader";
 
 const Explore = () => {
+    const [isLoading, setIsLoading] = useState(false);
     const [tags, setTags] = useState([]);
     useEffect(() => {
+        setIsLoading(true);
         const fetchTags = async () => {
             try {
                 const res = await Axios.get('https://api-blog-devsh-shivams-projects-1021053b.vercel.app/api/tags');
                 setTags(res.data);
-                // console.log(res.data);
+                setIsLoading(false);
             } catch (error) {
                 console.log(error.message);
             }
@@ -29,6 +32,7 @@ const Explore = () => {
                 Navigate your way through the guides and tutorials.
             </p>
         </div>
+        <Loader isLoading={isLoading} />
         <div className="flex flex-col flex-wrap relative mb-80">
             <h2 className="mb-4 mt-7 text-xs tracking-wide uppercase text-neutral-500">
                 Guides by Tag

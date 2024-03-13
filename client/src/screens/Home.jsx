@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Post from '../components/Post';
-import { infinity } from 'ldrs'
-infinity.register('my-precious')
+import Loader from '../components/Loader';
+
 // import { Helmet } from 'react-helmet'
 
 const Home = () => {
@@ -31,10 +31,7 @@ const Home = () => {
                 A collection of guides and tutorials on web development and devops.
             </p>
         </div>
-        <div className='w-full flex justify-center' >
-
-            {isLoading ? <div className='' ><my-precious color="white"></my-precious></div> : null}
-        </div>
+        <Loader isLoading={isLoading} />
         {posts.map((post) => (
             <Post key={post._id} post={post} />
         ))}
