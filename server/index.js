@@ -9,7 +9,9 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://blog-devsh.vercel.app'
+}));
 
 app.use('/api/posts', postRouter);
 app.use('/api/tags', tagRouter);
