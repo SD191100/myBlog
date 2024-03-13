@@ -10,7 +10,7 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://blog-devsh.vercel.app', "https://blog.devsh.tech", "http://localhost:5173"]
+  origin: ["https://blog-devsh.vercel.app", "https://blog.devsh.tech", "http://localhost:5173"]
 }));
 
 app.use('/api/posts', postRouter);
